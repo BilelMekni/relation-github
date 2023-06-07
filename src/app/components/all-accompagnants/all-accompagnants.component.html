@@ -1,0 +1,37 @@
+<app-banner title="All Accompagnant"></app-banner>
+<table class="table caption-top">
+    <caption>List of Accompagnant</caption>
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Telephone</th>
+        <th scope="col">Status</th>
+        <th scope="col">Email</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <tr *ngFor="let all of pageOfItems ">
+          <td>{{all._id}}</td>
+          <td>{{all.firstName}}</td>
+          <td>{{all.lastName}}</td>
+          <td>{{all.telephone}}</td>
+          <td>{{all.status}}</td>
+          <td>{{all.email}}</td>
+          <td>{{all.adresse}}</td>
+
+        <td><button type="button" class="btn btn-info"(click)="goToDisplay(all._id)" >Display</button></td>
+        <td><button type="button" class="btn btn-warning" (click)="editAllToAccompagnat(all._id)">Edit</button></td>
+
+      </tr>
+      
+    </tbody>
+    <div class="card-footer pb-0 pt-3">
+      <jw-pagination 
+     [items]="allaccomp"  [pageSize]="4" (changePage)="onChangePage($event)"></jw-pagination>
+     </div>
+  </table>

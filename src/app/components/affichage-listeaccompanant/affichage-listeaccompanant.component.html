@@ -1,0 +1,27 @@
+<app-banner title="Affichage-Liste-Accompanant" ></app-banner>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 col-sm-6 pro-item portfolio-item travel" *ngFor="let aff of affiche">
+            <div class="card h-100">
+               <div class="card-img">
+                <img class="img-fluid" src="assets/images/team_01.jpg" alt="" />
+                  <div class="card-body">
+                    <h4 class="card-header">FirstName : {{aff.firstName}} </h4>
+                    <h4 class="card-header"> LastName :{{aff.lastName}} </h4>
+                    <h4 class="card-header"> Telephone :{{aff.telephone}}</h4>
+                    <h4 class="card-header">Email : {{aff.email}} </h4>
+                    <h4 class="card-header"> Adresse :{{aff.adresse}} </h4>
+                </div>
+               </div>
+               <button type="button" (click)="display(aff)" class="btn btn-success">display</button>
+               <button type="button" (click)="contacter(aff)" class="btn btn-info">contacter</button>
+
+            </div>
+         </div>
+
+
+
+</div>
+
+
+</div>

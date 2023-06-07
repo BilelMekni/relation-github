@@ -1,0 +1,66 @@
+<app-banner title="SEARCH" ></app-banner>
+<div class="site-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <form [formGroup]="searchForm">
+            <div class="form-group">
+              <h1 class="text-blue">SEARCH ACCOMPAGNANTS</h1>
+              <input type="text" class="form-control"  formControlName="adresse"  placeholder="adresse">
+            </div>
+            <div *ngIf="searchForm.controls['adresse'].invalid && (searchForm.controls['adresse'].touched ||
+            searchForm.controls['adresse'].dirty)">
+
+            
+            <div *ngIf="searchForm.controls['adresse'].errors.required" class="red">
+                Adresse is required
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="control-group col-lg-6">
+                    <input type="number" class="form-control"  formControlName="experiencemax"  placeholder="experience max">
+
+                </div>
+
+            </div>
+            <div *ngIf="searchForm.controls['experiencemax'].invalid && (searchForm.controls['experiencemax'].touched ||
+            searchForm.controls['experiencemax'].dirty)">
+
+            
+            <div *ngIf="searchForm.controls['experiencemax'].errors.required" class="red">
+                Experience is required
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="control-group col-lg-6">
+                  <input type="number" class="form-control"  formControlName="experiencemin"  placeholder="experience min">
+
+              </div>
+
+          </div>
+          <div *ngIf="searchForm.controls['experiencemin'].invalid && (searchForm.controls['experiencemin'].touched ||
+          searchForm.controls['experiencemin'].dirty)">
+
+          
+          <div *ngIf="searchForm.controls['experiencemin'].errors.required" class="red">
+              Experience is required
+            </div>
+          </div>
+            
+            <div class="form-group ">
+              <input type="submit" (click)="search()"   class="btn btn-primary py-3 px-5" value="SEARCH">
+            </div>
+          </form>  
+        </div>
+    
+       
+      </div>
+      <div *ngFor="let m of chercher">
+        <app-publicite-principale></app-publicite-principale> 
+            </div>
+      
+            <div *ngIf="chercher?.length== 0" style="color: crimson; font-size: 30px;   ">
+                Not Found Accompagnants
+            </div>
+     
+  </div>

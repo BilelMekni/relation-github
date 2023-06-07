@@ -1,0 +1,28 @@
+
+<table class="table">
+    <tr>
+        
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>experience</th>
+        <th>adresse</th>
+        <th>Actions</th>
+
+    </tr>
+    <tr *ngFor="let m of pageOfItems">
+        <td>{{m.firstName}}</td>
+        <td>{{m.lastName}}</td>
+        <td>{{m.experience}}</td>
+        <td>{{m.adresse}}</td>
+        <td><button type="button" class="btn btn-info"(click)="goToDisplay(m._id)" >Display</button></td>
+        <td><button type="button" class="btn btn-warning" (click)="goToEdit(m._id)">Edit</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="deleteMatches(m._id)">Delete</button></td>
+
+    </tr>
+    
+      <div class="card-footer pb-0 pt-3">
+        <jw-pagination 
+       [items]="allaccomp" [pageSize]="2" (changePage)="onChangePage($event)"></jw-pagination>
+       </div>
+
+</table>

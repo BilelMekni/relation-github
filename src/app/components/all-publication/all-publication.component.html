@@ -1,0 +1,30 @@
+<app-banner title="All Publication Clients"></app-banner>
+<table class="table">
+    <tr>
+       
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Clients Name</th>
+        <th>Actions</th>
+
+    </tr>
+    <tr *ngFor="let p of pageOfItems ">
+        
+        <td>{{p.title}}</td>
+        <td>{{p.description}}</td>
+        <td>{{p.status}}</td>
+        <td>{{p.publications[0]?.firstName}}</td>
+      
+        <td><button type="button" class="btn btn-info"(click)="goToConfirme(p._id)" >Confirme</button></td>
+        <td><button type="button" class="btn btn-info"(click)="goToDisplay(p._id)" >Display</button></td>
+        <td><button type="button" class="btn btn-warning" (click)="goToAccepter(p._id)">Voir</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="deletePublications(p._id)">Delete</button></td>
+
+    </tr>
+    <div class="card-footer pb-0 pt-3">
+        <jw-pagination 
+       [items]="publications" [pageSize]="2" (changePage)="onChangePage($event)"></jw-pagination>
+       </div>
+
+</table>

@@ -1,0 +1,179 @@
+<app-banner title ="Signup"></app-banner>
+<div class="contact-main">
+    <div class="container">
+        <!-- Content Row -->
+      <div class="row">
+        <!-- Map Column -->
+            <div class="col-lg-8 mb-4 contact-left">
+                <h3>SIGNUP</h3>
+                <img class="img-fluid" src="assets/images/signup.jpg" alt="" style="right: 200px;" />
+                <form [formGroup]="signupForm" >
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="text"  formControlName="firstName"   placeholder="First Name" class="form-control" id="firstName" required data-validation-required-message="Please enter your name.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div *ngIf="signupForm.controls['firstName'].invalid && (signupForm.controls['firstName'].touched ||
+            signupForm.controls['firstName'].dirty)">
+            <div *ngIf="signupForm.controls['firstName'].errors.required" class="red">
+              first Name is required
+            </div>
+            <div *ngIf="signupForm.controls['firstName'].errors.minlength" class="red">
+              first Name must have at least 3
+            </div>
+            <div *ngIf="signupForm.controls['firstName'].errors.maxlength" class="red">
+              first Name must have at most 20 chars
+            </div>
+
+            </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="text" formControlName="lastName"  placeholder="Last Name" class="form-control" id="lasttName" required data-validation-required-message="Please enter your name.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div *ngIf="signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].touched ||
+            signupForm.controls['lastName'].dirty)">
+            <div *ngIf="signupForm.controls['lastName'].errors.required" class="red">
+              last Name is required
+            </div>
+            <div *ngIf="signupForm.controls['lastName'].errors.minlength" class="red">
+              last Name must have at least 3
+            </div>
+            <div *ngIf="signupForm.controls['lastName'].errors.maxlength" class="red">
+              last Name must have at most 20 chars
+            </div>
+
+            </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="tel" formControlName="telephone" placeholder="Telephone" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+                        </div>
+                    </div>
+                    <div *ngIf="signupForm.controls['telephone'].invalid && (signupForm.controls['telephone'].touched ||
+            signupForm.controls['telephone'].dirty)">
+            <div *ngIf="signupForm.controls['telephone'].errors.required" class="red">
+              telephone is required
+            </div>
+            <div *ngIf="signupForm.controls['telephone'].errors.minlength" class="red">
+              telephone must have at least 8
+            </div>
+            <div *ngIf="signupForm.controls['telephone'].errors.maxlength" class="red">
+              telephone must have at most 8 chars
+            </div>
+
+            </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="email"  formControlName="email"  placeholder="Email Address" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                        </div>
+                    </div>
+                    <div *ngIf="signupForm.controls['email'].invalid && (signupForm.controls['email'].touched ||
+            signupForm.controls['email'].dirty)">
+            <div *ngIf="signupForm.controls['email'].errors.required" class="red">
+              Email is required
+            </div>
+            <div *ngIf="signupForm.controls['email'].errors.email" class="red">
+              Format email invalid
+            </div>
+           
+
+            </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="password" formControlName="pwd"    placeholder="password" class="form-control" id="pwd" required data-validation-required-message="Please enter your password.">
+                        </div>
+                    </div>
+                    <div *ngIf="signupForm.controls['pwd'].invalid && (signupForm.controls['pwd'].touched ||
+                    signupForm.controls['pwd'].dirty)">
+                    <div *ngIf="signupForm.controls['pwd'].errors.required" class="red">
+                      password is required
+                    </div>
+                    <div *ngIf="signupForm.controls['pwd'].errors.minlength" class="red">
+                      password must have at least 6
+                    </div>
+                    <div *ngIf="signupForm.controls['pwd'].errors.maxlength" class="red">
+                      password must have at most 12 chars
+                    </div>
+        
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="text" formControlName="adresse"   placeholder="adresse" class="form-control" id="adresse" required data-validation-required-message="Please enter your adress.">
+                        </div>
+                    </div>
+                    <div *ngIf="signupForm.controls['adresse'].invalid && (signupForm.controls['adresse'].touched ||
+            signupForm.controls['adresse'].dirty)">
+            <div *ngIf="signupForm.controls['adresse'].errors.required" class="red">
+              adresse is required
+            </div>
+            <div *ngIf="signupForm.controls['adresse'].errors.minlength" class="red">
+              adresse must have at least 5
+            </div>
+            <div *ngIf="signupForm.controls['adresse'].errors.maxlength" class="red">
+              adresse must have at most 15 chars
+            </div>
+
+            </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="text" formControlName="experience"  placeholder="experience" class="form-control" id="exp" required data-validation-required-message="Please enter your experience.">
+                        </div>
+                    </div>
+                    <div *ngIf="signupForm.controls['experience'].invalid && (signupForm.controls['experience'].touched ||
+                    signupForm.controls['experience'].dirty)">
+                    <div *ngIf="signupForm.controls['experience'].errors.required" class="red">
+                      experience is required
+                    </div>
+                    <div *ngIf="signupForm.controls['experience'].errors.minlength" class="red">
+                      experience must have at least 5
+                    </div>
+                    <div *ngIf="signupForm.controls['experience'].errors.maxlength" class="red">
+                      experience must have at most 15 chars
+                    </div>
+        
+                    </div>
+                    <p>Gender</p>
+                    <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio1" name="gender" value="0" formControlName="gender" class="custom-control-input">
+                        <label class="custom-control-label"  for="customRadio1">Man</label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio2" name="gender" value="1" formControlName="gender" class="custom-control-input">
+                        <label class="custom-control-label"  for="customRadio2">Woman</label>
+                      </div>
+                      <div class="custom-control custom-radio">
+                        <input type="radio" id="customRadio2" name="gender" value="-1" formControlName="gender" class="custom-control-input">
+                        <label class="custom-control-label"  for="customRadio2">Other</label>
+                      </div>
+                      <div class="form-group" style="visibility: hidden;">
+                        <input type="file" class="form-control" #filePicker (change)="onImageSelected($event)">
+                      </div>
+                      <div class="text-center">
+                        <button class="btn btn-info" (click)="filePicker.click()">Please select your avatar</button>
+                       <br>
+                       <img [src]="imagePreview" *ngIf="imagePreview"
+                       class="pt-3 pb-3" width="200px" height="200px" alt="">
+                     </div>
+                     <div class="form-group" style="visibility: hidden;">
+                        <input type="file" class="form-control" #pdf (change)="onCVSelected($event)">
+                      </div>
+                      <div class="text-center">
+                        <button class="btn btn-info" (click)="pdf.click()">Please select your cv</button>
+                       <br>
+                       <iframe [src]="cvPreview | cv" *ngIf="cvPreview"
+                       class="pt-3 pb-3" width="200px" height="200px" alt=""></iframe>
+                     </div>
+                    <div id="success"></div>
+                    <!-- For success/fail messages -->
+                    <button (click)="signup()" [disabled]="signupForm.invalid"  type="submit" class="btn btn-primary" id="sendMessageButton">SIGNUP</button>
+                    <button (click)="login()"  type="button" class="btn btn-link">LOGIN</button>
+                </form>
+            </div>
+            
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</div>

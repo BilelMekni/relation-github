@@ -1,0 +1,61 @@
+<app-banner title ="Contact"></app-banner>
+
+<div class="contact-main">
+    <div class="container">
+        <!-- Content Row -->
+      <div class="row">
+        <!-- Map Column -->
+            <div class="col-lg-8 mb-4 contact-left">
+                <h3>Send us a Message</h3>
+                <form name="sentMessage" id="contactForm" novalidate>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="text" placeholder="Full Name" class="form-control" id="name" required data-validation-required-message="Please enter your name.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="tel" placeholder="Phone Number" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="email" placeholder="Email Address" class="form-control" id="email" required data-validation-required-message="Please enter your email address.">
+                        </div>
+                    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <textarea rows="5" cols="100" placeholder="Message" class="form-control" id="message" required data-validation-required-message="Please enter your message" maxlength="999" style="resize:none"></textarea>
+                        </div>
+                    </div>
+                    <div id="success"></div>
+                    <!-- For success/fail messages -->
+                    <button type="submit" class="btn btn-primary" id="sendMessageButton">Send Message</button>
+                </form>
+            </div>
+            <!-- Contact Details Column -->
+            <div class="col-lg-4 mb-4 contact-right">
+                <h3>Contact Details</h3>
+                <p>
+                    Center Urbain Nord
+                    <br>tunis, Bis 42056
+                    <br>
+                </p>
+                <p>
+                    <abbr title="Phone">P</abbr>: (216) 71569000
+                </p>
+                <p>
+                    <abbr title="Email">E</abbr>:
+                    <a href="mailto:name@example.com"> name@example.com </a>
+                </p>
+                <p>
+                    <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
+                </p>
+            </div>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</div>
+

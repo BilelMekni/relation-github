@@ -1,0 +1,30 @@
+<app-banner title="Consulter les Publications des Clients"></app-banner>
+<div class="container">
+ 
+
+    <div class="red">
+        <h1 class="py-4">WELLCOME TO PUBLICATIONS CONFIRMED </h1>
+    </div> 
+
+    <div class="row">  
+        <div class="col-lg-4 col-sm-6" *ngFor="let pub of pubs">
+        <div class="card h-100" >
+            <div class="card-img">
+            <img class="img-fluid" src="assets/images/w3.jpg" alt="" />
+            </div>
+            <div class="card-body">
+                <h4 class="card-header"> {{pub.clients[0]?.firstName}} </h4>
+                <h4 class="card-header"> {{pub.clients[0]?.lastName}} </h4>
+                <h4 class="card-header"> {{pub.title}}</h4>
+                <h4 class="card-header"> {{pub.description}} </h4>
+            </div>
+            <button type="button" (click)="Contacter(pub)" class="btn btn-outline-success">Contacter</button>
+        </div>
+       </div>
+    </div>
+</div>
+
+
+
+
+

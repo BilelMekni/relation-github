@@ -1,0 +1,98 @@
+
+<app-banner title="Modifier All All Accompagnants"></app-banner>
+<div class="contact-main">
+    <div class="container">
+        <!-- Content Row -->
+      <div class="row">
+        <!-- Map Column -->
+            <div class="col-lg-8 mb-4 contact-left">
+                <h3>UPDATE</h3>
+                <form [formGroup]="modifierAllForm">
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="text" formControlName="firstName"  placeholder="firstName" class="form-control" id="email" required data-validation-required-message="Please enter your firstName.">
+                        </div>
+                    </div>
+                    <div *ngIf="modifierAllForm.controls['firstName'].invalid && (modifierAllForm.controls['firstName'].touched ||
+            modifierAllForm.controls['firstName'].dirty)">
+            <div *ngIf="modifierAllForm.controls['firstName'].errors.required" class="red">
+              firstName is required
+            </div>
+            <div *ngIf="modifierAllForm.controls['firstName'].errors.minlength" class="red">
+                first Name must have at least 3
+              </div>
+              <div *ngIf="modifierAllForm.controls['firstName'].errors.maxlength" class="red">
+                first Name must have at most 20 chars
+              </div>
+           
+
+            </div>
+            <div class="control-group form-group">
+                <div class="controls">
+                    <input type="text" formControlName="lastName"  placeholder="LastName" class="form-control" id="lastName" required data-validation-required-message="Please enter your lastName.">
+                </div>
+            </div>
+            <div *ngIf="modifierAllForm.controls['lastName'].invalid && (modifierAllForm.controls['lastName'].touched ||
+    modifierAllForm.controls['lastName'].dirty)">
+    <div *ngIf="modifierAllForm.controls['lastName'].errors.required" class="red">
+      LastName is required
+    </div>
+    <div *ngIf="modifierAllForm.controls['lastName'].errors.minlength" class="red">
+        last Name must have at least 4
+      </div>
+      <div *ngIf="modifierAllForm.controls['lastName'].errors.maxlength" class="red">
+        last Name must have at most 20 chars
+      </div>
+   
+
+    </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="tel" formControlName="telephone"  placeholder="Telephone" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+                        </div>
+                    </div>
+                    <div *ngIf="modifierAllForm.controls['telephone'].invalid && (modifierAllForm.controls['telephone'].touched ||
+                    modifierAllForm.controls['telephone'].dirty)">
+                    <div *ngIf="modifierAllForm.controls['telephone'].errors.required" class="red">
+                      telephone is required
+                    </div>
+                    <div *ngIf="modifierAllForm.controls['telephone'].errors.minlength" class="red">
+                      telephone must have at least 8
+                    </div>
+                    <div *ngIf="modifierAllForm.controls['telephone'].errors.maxlength" class="red">
+                      telephone must have at most 8 chars
+                    </div>
+        
+                    </div>
+                    
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="text"  formControlName="adresse"   placeholder="adresse" class="form-control" id="pwd" required data-validation-required-message="Please enter your adresse.">
+                        </div>
+                    </div>
+                    <div *ngIf="modifierAllForm.controls['adresse'].invalid && (modifierAllForm.controls['adresse'].touched ||
+                    modifierAllForm.controls['adresse'].dirty)">
+                    <div *ngIf="modifierAllForm.controls['adresse'].errors.required" class="red">
+                      adresse is required
+                    </div>
+                    <div *ngIf="modifierAllForm.controls['adresse'].errors.minlength" class="red">
+                      password must have at least 4
+                    </div>
+                    <div *ngIf="modifierAllForm.controls['adresse'].errors.maxlength" class="red">
+                      password must have at most 20 chars
+                    </div>
+        
+                    </div>
+                    <div id="success"></div>
+                    <!-- For success/fail messages -->
+                    <button  (click)="update()"  type="submit" class="btn btn-primary" id="sendMessageButton">UPDATE ALL ALL ACCOMPAGNANT</button>
+                    
+                </form>
+            </div>
+            
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</div>
+

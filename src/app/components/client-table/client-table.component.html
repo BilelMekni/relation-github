@@ -1,0 +1,41 @@
+<app-banner title="Clients Table"></app-banner>
+<table class="table caption-top">
+    <caption>List of Clients</caption>
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Telephone</th>
+        <th scope="col">Email</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Status</th>
+        <th scope="col">Role</th>
+        <th scope="col">Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of pageOfItems">
+        <td>{{c._id}}</td>
+        <td>{{c.firstName}}</td>
+        <td>{{c.gender | gender}}{{c.lastName }}</td>
+        <td>{{c.telephone}}</td>
+        <td>{{c.email}}</td>
+        <td>{{c.adresse}}</td>
+        <td>{{c.status}}</td>
+        <td>{{c.role}}</td>
+        <td><button type="button" class="btn btn-success"(click)="confirmeClient(c._id)" >Confirme</button></td>
+        <td><button type="button" class="btn btn-info" (click)="goToDisplay(c._id)"   >Display</button></td>
+        <td><button type="button" class="btn btn-warning" >Edit</button></td>
+        <td><button type="button" class="btn btn-danger">Delete</button></td>
+      </tr>
+
+    </tbody>
+    
+    <div class="card-footer pb-0 pt-3">
+      <jw-pagination 
+     [items]="clients"  [pageSize]="4" (changePage)="onChangePage($event)"></jw-pagination>
+     </div>
+    
+  </table>

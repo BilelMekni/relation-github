@@ -1,0 +1,40 @@
+<app-banner title="Listes Des Reservations"></app-banner>
+<table class="table caption-top">
+    
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Telephone</th>
+        <th scope="col">Email</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Status</th>
+        <th scope="col">Role</th>
+        <th scope="col">Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let l of pageOfItems">
+        <td>{{l._id}}</td>
+        <td>{{l.firstName | asterix}}</td>
+        <td>{{l.gender | gender}}{{l.lastName }}</td>
+        <td>{{l.telephone}}</td>
+        <td>{{l.email}}</td>
+        <td>{{l.adresse}}</td>
+        <td>{{l.status}}</td>
+        <td>{{l.role}}</td>
+       
+        <td><button type="button" (click)="accepter(l._id)" class="btn btn-warning" >Accepter</button></td>
+        <td><button type="button" class="btn btn-danger">Refuser</button></td>
+      </tr>
+
+    </tbody>
+    
+    <div class="card-footer pb-0 pt-3">
+      <jw-pagination 
+     [items]="reservations"  [pageSize]="4" (changePage)="onChangePage($event)"></jw-pagination>
+     </div>
+    
+  </table>

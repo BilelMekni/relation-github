@@ -1,0 +1,37 @@
+<app-banner title="Accepter Clients"></app-banner>
+<div class="contact-main">
+    <div class="container">
+       
+        <form #accepterForm="ngForm" (ngSubmit)="validate()">
+            <h1>SEND RESPONSES</h1>
+
+            <div class="control-group form-group">
+                <div class="controls">
+                    <input type="text" [(ngModel)]="accepter.firstName" [ngModelOptions]="{standalone: true}"
+                        placeholder="firstName" class="form-control" id="firstName" required
+                        data-validation-required-message="Please enter your phone First Name.">
+                </div>
+            </div>
+            <div class="control-group form-group">
+                <div class="controls">
+                    <input type="text" [(ngModel)]="accepter.lastName" [ngModelOptions]="{standalone: true}"
+                        placeholder="lastName" class="form-control" id="lastName" required
+                        data-validation-required-message="Please enter your phone Last Name.">
+                </div>
+            </div>
+            <div class="control-group form-group">
+                <div class="controls">
+                    <input type="number" [(ngModel)]="accepter.telephone" [ngModelOptions]="{standalone: true}"
+                        placeholder="telephone" class="form-control" id="telephone" required
+                        data-validation-required-message="Please enter your phone Telephone.">
+                </div>
+            </div>
+
+            
+            <button type="submit" class="btn btn-primary" id="sendMessageButton">SEND</button>
+
+        </form>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</div>

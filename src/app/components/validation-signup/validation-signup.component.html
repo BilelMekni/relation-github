@@ -1,0 +1,104 @@
+<app-banner title ="Signup Admin"></app-banner>
+<div class="contact-main">
+    <div class="container">
+        <!-- Content Row -->
+      <div class="row">
+        <!-- Map Column -->
+            <div class="col-lg-8 mb-4 contact-left">
+                <h3>SIGNUP VALIDATION</h3>
+                <img class="img-fluid" src="assets/images/iconeadmin.jpg" alt="" />
+
+                <form [formGroup]="signupForm" >
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="text"  formControlName="firstName"   placeholder="First Name" class="form-control" id="firstName" required data-validation-required-message="Please enter your name.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div *ngIf="signupForm.controls['firstName'].invalid && (signupForm.controls['firstName'].touched ||
+            signupForm.controls['firstName'].dirty)">
+            <div *ngIf="signupForm.controls['firstName'].errors.required" class="red">
+              first Name is required
+            </div>
+            <div *ngIf="signupForm.controls['firstName'].errors.minlength" class="red">
+              first Name must have at least 3
+            </div>
+            <div *ngIf="signupForm.controls['firstName'].errors.maxlength" class="red">
+              first Name must have at most 20 chars
+            </div>
+
+            </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="text" formControlName="lastName"  placeholder="Last Name" class="form-control" id="lasttName" required data-validation-required-message="Please enter your name.">
+                            <p class="help-block"></p>
+                        </div>
+                    </div>
+                    <div *ngIf="signupForm.controls['lastName'].invalid && (signupForm.controls['lastName'].touched ||
+            signupForm.controls['lastName'].dirty)">
+            <div *ngIf="signupForm.controls['lastName'].errors.required" class="red">
+              last Name is required
+            </div>
+            <div *ngIf="signupForm.controls['lastName'].errors.minlength" class="red">
+              last Name must have at least 3
+            </div>
+            <div *ngIf="signupForm.controls['lastName'].errors.maxlength" class="red">
+              last Name must have at most 20 chars
+            </div>
+
+            </div>
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="tel" formControlName="telephone" placeholder="Telephone" class="form-control" id="phone" required data-validation-required-message="Please enter your phone number.">
+                        </div>
+                    </div>
+                    <div *ngIf="signupForm.controls['telephone'].invalid && (signupForm.controls['telephone'].touched ||
+            signupForm.controls['telephone'].dirty)">
+            <div *ngIf="signupForm.controls['telephone'].errors.required" class="red">
+              telephone is required
+            </div>
+            <div *ngIf="signupForm.controls['telephone'].errors.minlength" class="red">
+              telephone must have at least 8
+            </div>
+            <div *ngIf="signupForm.controls['telephone'].errors.maxlength" class="red">
+              telephone must have at most 8 chars
+            </div>
+
+            </div>
+                    
+                 
+                    <div class="control-group form-group">
+                        <div class="controls">
+                            <input type="password" formControlName="pwd"    placeholder="password" class="form-control" id="pwd" required data-validation-required-message="Please enter your password.">
+                        </div>
+                    </div>
+                    <div *ngIf="signupForm.controls['pwd'].invalid && (signupForm.controls['pwd'].touched ||
+                    signupForm.controls['pwd'].dirty)">
+                    <div *ngIf="signupForm.controls['pwd'].errors.required" class="red">
+                      password is required
+                    </div>
+                    <div *ngIf="signupForm.controls['pwd'].errors.minlength" class="red">
+                      password must have at least 10 chars
+                    </div>
+                    <div *ngIf="signupForm.controls['pwd'].errors.maxlength" class="red">
+                      password must have at most 14 chars
+                    </div>
+        
+                    </div>
+                
+                      
+                    
+                    <!-- For success/fail messages -->
+                    <button (click)="signupV()" [disabled]="signupForm.invalid"  type="submit" class="btn btn-primary" id="sendMessageButton">SIGNUP ADMIN</button>
+                    <button (click)="login()"  type="button" class="btn btn-link">LOGIN</button>
+
+                </form>
+            </div>
+            
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</div>
+
+

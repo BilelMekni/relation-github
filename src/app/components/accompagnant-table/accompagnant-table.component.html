@@ -1,0 +1,40 @@
+<app-banner title="Accompagnant Table"></app-banner>
+<table class="table caption-top">
+    <caption>List of Accompagnant</caption>
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Telephone</th>
+        <th scope="col">Email</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">status</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <tr *ngFor="let acc of pageOfItems ">
+          <td>{{acc._id}}</td>
+          <td>{{acc.firstName}}</td>
+          <td>{{acc.lastName}}</td>
+          <td>{{acc.telephone}}</td>
+          <td>{{acc.email}}</td>
+          <td>{{acc.adresse}}</td>
+          <td>{{acc.status}}</td>
+
+      
+        <td><button type="button" class="btn btn-success" (click)="confirmeAccompagnant(acc._id)"   >Confirme</button></td>
+        <td><button type="button" class="btn btn-info"(click)="goToDisplay(acc._id)" >Display</button></td>
+        <td><button type="button" class="btn btn-warning" (click)="editToAccompagnat(acc._id)">Edit</button></td>
+        <!-- <td><button type="button" class="btn btn-danger" (click)="deleteAccomp(acc._id)">Delete</button></td> -->
+
+      </tr>
+      
+    </tbody>
+    <div class="card-footer pb-0 pt-3">
+      <jw-pagination 
+     [items]="accompts"  [pageSize]="4" (changePage)="onChangePage($event)"></jw-pagination>
+     </div>
+  </table>

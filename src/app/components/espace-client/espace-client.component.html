@@ -1,0 +1,31 @@
+<app-banner title="Liste Of Publications Clients"></app-banner>
+<table class="table caption-top">
+    
+    <thead>
+        <tr>
+            
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+            <th scope="col">Status</th>
+            <th scope="col">Reserve</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let r of pageOfItems">
+            
+            <td>{{r.title}}</td>
+            <td>{{r.description}}</td>
+            <td>{{r.status}}</td>
+           
+            <span class="badge rounded-pill bg-warning" type="button" (click)="display()"*ngIf="r.accompagnants.length==0">waiting</span>
+            <span type="button" (click)="display(r.accompagnants[0])" class="badge rounded-pill bg-success" *ngIf="r.accompagnants.length>0">Reserved</span>
+        </tr>
+
+    </tbody>
+
+    <div class="card-footer pb-0 pt-3">
+        <jw-pagination [items]="pubs" [pageSize]="4" (changePage)="onChangePage($event)"></jw-pagination>
+    </div>
+
+</table>

@@ -1,0 +1,31 @@
+<app-banner title="Utilisateurs Validaite"></app-banner>
+<table class="table caption-top">
+    <caption>List of Users</caption>
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Telephone</th>
+        <th scope="col">Password</th>
+        <th scope="col">Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of users">
+        <td>{{c._id}}</td>
+        <td>{{c.firstName}}</td>
+        <td>{{c.lastName }}</td>
+        <td>{{c.telephone}}</td>
+        <td>{{c.pwd}}</td>
+        
+        <td><button type="button" class="btn btn-success"(click)="modifierUser(c._id)" >Modifier</button></td>
+        
+      </tr>
+
+    </tbody>
+    
+  
+    
+  </table>

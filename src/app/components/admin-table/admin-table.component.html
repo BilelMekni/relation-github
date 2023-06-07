@@ -1,0 +1,38 @@
+<app-banner title="Admin Table"></app-banner>
+<table class="table caption-top">
+    <caption>List of Admin</caption>
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Telephone</th>
+        <th scope="col">Email</th>
+        <th scope="col">Adresse</th>
+        <th scope="col">Role</th>
+        <th scope="col">Actions</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of pageOfItems">
+        <td>{{a._id}}</td>
+        <td>{{a.firstName | asterix}}</td>
+        <td>{{a.gender | gender}}{{a.lastName }}</td>
+        <td>{{a.telephone}}</td>
+        <td>{{a.email}}</td>
+        <td>{{a.adresse}}</td>  
+        <td>{{a.role}}</td>
+        <td><button type="button" (click)="displayEspaceClient(a._id)"   class="btn btn-info" >Display</button></td>
+        <!-- <td><button type="button" class="btn btn-warning" >Edit</button></td> -->
+        <td><button type="button" (click)="deleteAdmin(a._id)"   class="btn btn-danger">Delete</button></td>
+      </tr>
+
+    </tbody>
+    
+    <div class="card-footer pb-0 pt-3">
+      <jw-pagination 
+     [items]="admin"  [pageSize]="4" (changePage)="onChangePage($event)"></jw-pagination>
+     </div>
+    
+  </table>

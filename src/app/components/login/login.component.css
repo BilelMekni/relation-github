@@ -1,0 +1,14 @@
+.red{
+    color: red;
+}
+
+.img-fluid { 
+    left:750px;
+    top:42px;
+    position:absolute;
+    width: 250px;
+    height: 250px;
+   }
+   h3{
+color: darkgoldenrod;
+   }

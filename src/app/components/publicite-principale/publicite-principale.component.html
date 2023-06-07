@@ -1,0 +1,56 @@
+<!-- <table class="table caption-top">
+    <caption>List of Clients</caption>
+    <thead>
+      <tr>
+        <th scope="col">FirstName</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Telephone</th>
+        <th scope="col">Experience</th>
+        <th scope="col">Adresse</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of pageOfItems">
+        <td>{{c.firstName}}</td>
+        <td>{{c.lastName }}</td>
+        <td>{{c.telephone}}</td>
+        <td>{{c.experience}}</td>
+        <td>{{c.adresse}}</td>
+
+      </tr>
+
+    </tbody>
+    
+    <div class="card-footer pb-0 pt-3">
+      <jw-pagination 
+     [items]="listes"  [pageSize]="4" (changePage)="onChangePage($event)"></jw-pagination>
+     </div>
+    
+  </table> -->
+
+<div class="container">
+  <h1 style="text-align: center; font-weight: bold;" class="py-4">All Accompagnants </h1>
+  <div class="post-slide" *ngFor="let p of pageOfItems">
+  
+    <div class="post-header">
+      <!-- <h4 class="title">
+            <a href="#">Latest blog Post</a>
+        </h4> -->
+      <ul class="post-bar">
+        <li><img src="assets/images/testi_01.png" alt=""><a href="#"> LastName && FirstName:{{p.firstName}} {{p.lastName}}</a></li>
+        <li><i class="fa fa-calendar"></i>Telephone:{{p.telephone}}</li>
+      </ul>
+    </div>
+    <p class="post-description">
+    <p>Experience:{{p.experience}} </p>
+    <p>Adresse:{{p.adresse}} </p>
+  </div>
+  <div class="text-center">
+    <button type="button" class="btn btn-info" (click)="displayAll()">DISPLAY All</button>
+  </div>
+  <div class="card-footer pb-0 pt-3">
+    <jw-pagination 
+   [items]="accompts" [pageSize]="2" (changePage)="onChangePage($event)"></jw-pagination>
+   </div>
+</div>

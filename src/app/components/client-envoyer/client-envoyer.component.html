@@ -1,0 +1,34 @@
+<app-banner title="Client Envoyer"></app-banner>
+<div class="contact-main">
+    <div class="container">
+       
+        <form #publiciteForm="ngForm" (ngSubmit)="validate()">
+            <h1>ADD PUBLICATION</h1>
+
+            <div class="control-group form-group">
+                <div class="controls">
+                    <input type="text" [(ngModel)]="publicite.title" [ngModelOptions]="{standalone: true}"
+                        placeholder="title" class="form-control" id="title" required
+                        data-validation-required-message="Please enter your phone Title.">
+                </div>
+            </div>
+
+            <div class="control-group form-group">
+                <div class="controls">
+
+                    <textarea class="form-control" [(ngModel)]="publicite.description"
+                        [ngModelOptions]="{standalone: true}" placeholder="description"
+                        id="floatingTextarea"></textarea>
+
+                </div>
+
+            </div>
+            <button type="submit" class="btn btn-primary" id="sendMessageButton">ADD</button>
+            
+            <button type="submit" (click)="retour(id)"  class="btn btn-success" id="sendMessageButton">FEEDBACK</button>
+
+        </form>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+</div>

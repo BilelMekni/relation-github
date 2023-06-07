@@ -1,0 +1,22 @@
+<app-banner title="Voir Response des  Accompagnants"></app-banner>
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Telephone</th>
+        <th>Description</th>
+        <th>Actions</th>
+
+    </tr>
+    <tr *ngFor="let a of acceptes">
+        <td>{{a._id}}</td>
+        <td>{{a.telephone}}</td>
+        <td>{{a.description}}</td>
+        
+        <td><button type="button" class="btn btn-info"(click)="retour(a._id)">Retour</button></td>
+        <td><button type="button" class="btn btn-danger"(click)="deleteReponse(a._id)">Delete</button></td>
+
+        
+
+    </tr>
+
+</table>
